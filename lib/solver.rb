@@ -1,4 +1,4 @@
-require './lib/board'
+require_relative 'board'
 require 'pry'
 
 class Solver

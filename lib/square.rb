@@ -1,6 +1,6 @@
 require_relative 'spot'
 
-class Column
+class Square
   attr_reader :spots, :undecided_spots
 
   def initialize(spots)
@@ -11,7 +11,7 @@ class Column
     @spots.reject{|spot| spot.value_decided?}
   end
 
-  def assess_column
+  def assess_square
     spots.each do |spot|
       if spot.value_decided?
         undecided_spots.each{|spt| spt.remove_possibility(spot.value)}

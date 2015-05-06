@@ -1,4 +1,4 @@
-require './lib/spot'
+require_relative 'spot'
 
 class Row
   attr_reader :spots, :undecided_spots

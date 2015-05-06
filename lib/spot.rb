@@ -16,6 +16,6 @@ attr_reader :value, :possibilities
   end
 
   def value_decided?
-    value != "0"
+    value != 0
   end
 end

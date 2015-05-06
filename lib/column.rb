@@ -1,6 +1,6 @@
 require './lib/spot'
 
-class Row
+class Column
   attr_reader :spots, :undecided_spots
 
   def initialize(spots)
@@ -11,7 +11,7 @@ class Row
     @spots.reject{|spot| spot.value_decided?}
   end
 
-  def assess_row
+  def assess_column
     spots.each do |spot|
       if spot.value_decided?
         undecided_spots.each{|spt| spt.remove_possibility(spot.value)}

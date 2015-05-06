@@ -1,3 +1,6 @@
+require './lib/board'
+require 'pry'
+
 class Solver
 attr_reader :board
 

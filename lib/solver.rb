@@ -12,6 +12,6 @@ attr_reader :board
     until board.all_decided?
       board.evaluate_all_possibilities
     end
-    board.spots.map {|spot| spot.value}
+    board.spots.map{|spot| spot.value}.each_slice(9){|slice| puts slice.join}
   end
 end

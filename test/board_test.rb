@@ -19,4 +19,12 @@ class BoardTest < Minitest::Test
   def test_it_has_rows
     assert_equal 9, @board.rows.size
   end
+  
+  def test_it_has_columns
+    assert_equal 9, @board.rows.size
+  end
+  
+  def test_it_has_squares
+    assert_equal 9, @board.rows.size
+  end
 end

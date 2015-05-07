@@ -7,6 +7,8 @@ class SolverTest < Minitest::Test
   def setup
     @solver = Solver.new(File.read("./puzzles/easy_sample.txt").gsub("\n", "").gsub(" ", "0").chars)
     @solver2 = Solver.new(File.read("./puzzles/easy_sample2.txt").gsub("\n", "").gsub(" ", "0").chars)
+    @solver3 = Solver.new(File.read("./puzzles/medium_sample_ish.txt").gsub("\n", "").gsub(" ", "0").chars)
+    @solver4 = Solver.new(File.read("./puzzles/hard_sample.txt").gsub("\n", "").gsub(" ", "0").chars)
   end
 
   def test_it_exists
@@ -18,10 +20,19 @@ class SolverTest < Minitest::Test
   end
 
   def test_it_solves_the_simplest_possible_puzzle
-    assert_equal ["826594317", "715638942", "394721865", "163459278", "948267153", "257813694", "531942786", "482176539", "679385421"], @solver.solve.each_slice(9).to_a.map{|ary| ary.join}
+    assert_equal ["826594317", "715638942", "394721865", "163459278", "948267153", "257813694", "531942786", "482176539", "679385421"], @solver.solve
   end
 
   def test_it_solves_a_slightly_harder_puzzle
-    assert_equal ["826594317", "715638942", "394721865", "163459278", "948267153", "257813694", "531942786", "482176539", "679385421"], @solver2.solve.each_slice(9).to_a.map{|ary| ary.join}
+    assert_equal ["826594317", "715638942", "394721865", "163459278", "948267153", "257813694", "531942786", "482176539", "679385421"], @solver2.solve
+  end
+
+  def test_it_solves_an_even_harder_puzzle
+    assert_equal ["826594317", "715638942", "394721865", "163459278", "948267153", "257813694", "531942786", "482176539", "679385421"], @solver3.solve
+  end
+  
+  def test_it_solves_a_difficult_puzzle
+    skip
+    assert_equal ["854219763", "397865421", "261473985", "785126394", "649538172", "132947856", "926384517", "513792648", "478651239"], @solver4.solve 
   end
 end

@@ -8,7 +8,11 @@ class Row
   end
 
   def undecided_spots
-    @spots.reject{|spot| spot.value_decided?}
+    @spots.reject(&:value_decided?)
+  end
+
+  def decided_spots
+    @spots.select(&:value_decided?)
   end
 
   def assess_row
